@@ -79,7 +79,7 @@ class APIClient:
         try:
             response = requests.post(**request_args)
             response.raise_for_status()
-            print("✅ 2xx Success!")
+            print("2xx Success!")
             return response.json()
         except HTTPError as http_err:
             print(f"HTTP error occurred: {http_err}")
