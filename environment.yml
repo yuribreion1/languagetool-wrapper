@@ -6,3 +6,5 @@ dependencies:
   # --- Conda Packages ---
   - python=3.10
   - requests
+  - pylint
+  - pre-commit
