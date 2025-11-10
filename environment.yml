@@ -1,0 +1,8 @@
+name: languagetool-wrapper
+channels:
+  - conda-forge  # Recommended channel
+  - defaults
+dependencies:
+  # --- Conda Packages ---
+  - python=3.10
+  - requests
