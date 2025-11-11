@@ -9,16 +9,18 @@ jobs:
       matrix:
         python-version: ["3.8", "3.9", "3.10"]
     steps:
-    - uses: actions/checkout@v4
-    - name: Set up Conda ${{ matrix.python-version }}
-      uses: conda-actions/setup-miniconda@v3
-      with:
-        python-version: ${{ matrix.python-version }}
-    - name: Prepare Conda environment
-      run: |
-        conda env create -f environment.yml
-    - name: Analysing the code with pylint
-      run: |
-        # This command now works because the environment is activated
-        # and has pylint installed.
-        pylint $(git ls-files '*.py')
+      - uses: actions/checkout@v4
+
+      - name: Set up Conda ${{ matrix.python-version }}
+        uses: conda-incubator/setup-miniconda@v3
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Prepare Conda environment
+        run: |
+          conda env create -f environment.yml
+      - name: Analysing the code with pylint
+        run: |
+          # This command now works because the environment is activated
+          # and has pylint installed.
+          pylint $(git ls-files '*.py')
