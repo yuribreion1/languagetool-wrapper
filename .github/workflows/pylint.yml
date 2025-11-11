@@ -18,9 +18,6 @@ jobs:
           activate-environment: languagetool-wrapper
           environment-file: environment.yml
 
-      - name: Prepare Conda environment
-        run: |
-          conda env create -f environment.yml
       - name: Analysing the code with pylint
         run: |
           # This command now works because the environment is activated
