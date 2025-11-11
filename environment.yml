@@ -4,7 +4,7 @@ channels:
   - defaults
 dependencies:
   # --- Conda Packages ---
-  - python=3.10
+  - python>=3.8
   - requests
   - pylint
   - pre-commit
