@@ -16,5 +16,6 @@ jobs:
           environment-file: environment.yml
           activate-environment: languagetool-wrapper
           channels: defaults,conda-forge
+          auto_activate_base: false
       - run: |
           pylint $(git ls-files '*.py')
