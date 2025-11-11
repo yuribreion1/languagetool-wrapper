@@ -10,14 +10,15 @@ jobs:
         python-version: ["3.8", "3.9", "3.10"]
     steps:
     - uses: actions/checkout@v4
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v3
+    - name: Set up Conda ${{ matrix.python-version }}
+      uses: conda-actions/setup-miniconda@v3
       with:
         python-version: ${{ matrix.python-version }}
-    - name: Install dependencies
+    - name: Prepare Conda environment
       run: |
-        python -m pip install --upgrade pip
-        pip install pylint
+        conda env create -f environment.yml
     - name: Analysing the code with pylint
       run: |
+        # This command now works because the environment is activated
+        # and has pylint installed.
         pylint $(git ls-files '*.py')
