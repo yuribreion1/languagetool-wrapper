@@ -15,7 +15,8 @@ jobs:
         with:
           environment-file: environment.yml
           activate-environment: languagetool-wrapper
+          python-version: ${{ matrix.python-version }}
+          auto-activate-base: false
           channels: defaults,conda-forge
-          auto_activate_base: false
       - run: |
           pylint $(git ls-files '*.py')
