@@ -11,15 +11,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Conda ${{ matrix.python-version }}
-        uses: conda-incubator/setup-miniconda@v3
+      - uses: conda-incubator/setup-miniconda@v3
         with:
-          activate-environment: languagetool-wrapper
           environment-file: environment.yml
+          activate-environment: languagetool-wrapper
+          channels: conda-forge
           auto-activate: false
-
-      - name: Analysing the code with pylint
-        run: |
-          # This command now works because the environment is activated
-          # and has pylint installed.
+      - run: |
           pylint $(git ls-files '*.py')
