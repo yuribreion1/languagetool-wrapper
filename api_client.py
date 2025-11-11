@@ -25,7 +25,7 @@ class APIClient:
         supported languages of LanguageTool
         """
 
-        full_url = f"{self.base_url[0]}{endpoint}"
+        full_url = f"{self.base_url}{endpoint}"
 
         headers = {"accept": "application/json"}
 
@@ -48,7 +48,7 @@ class APIClient:
         Perform POST request to check the text
         """
 
-        full_url = f"{self.base_url[0]}{endpoint}"
+        full_url = f"{self.base_url}{endpoint}"
 
         body = ""
 
@@ -74,7 +74,7 @@ class APIClient:
 
         request_args = {"url": full_url, "timeout": 5, "headers": headers, "data": body}
 
-        print(f"Attempting POST request to {self.base_url[0]}")
+        print(f"Attempting POST request to {self.base_url}")
 
         try:
             response = requests.post(**request_args)
