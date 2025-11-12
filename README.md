@@ -17,3 +17,27 @@ following arguments:
 - Required if `check` is selected: `--language` and `--text` (plain-text or JSON)
 
 Example of `language`: **pt-BR**
+
+# Files Overview
+
+## `api_client.py`
+
+File that hosts the APIClient class, that is responsible to handle the HTTP requests.
+`requests`library is that takes the action to interact with external applications.
+
+### Contructor
+
+The class has a constructor that expects three arguments:
+- `base_url`
+- `username`
+- `apikey`
+
+### `get`
+
+The function obtain languages available by language tool, and obtain the words stored
+on the user dictionary.
+
+### `post`
+
+Action to send information to language tool, specially to verify markup or plain texts.
+Additionally, the `post` action also add new words to the user dictionary.
