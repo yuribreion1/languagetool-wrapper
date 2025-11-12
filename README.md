@@ -7,7 +7,11 @@ AI/ML platform that helps with language grammar mistakes.
 
 1. Consider creating the conda environment:
 - `conda env create -f environment.yml`
-2. Use the python command line to run the `main.py` with the
+2. Prepare the following environment variables for authentication:
+  - `LANGUAGETOOL_USERNAME`
+  - `LANGUAGETOOL_APIKEY`
+  - `LANGUAGETOOL_BASEURL`
+3. Use the python command line to run the `main.py` with the
 following arguments:
 - Required: `--function languages|check`
 - Required if `check` is selected: `--language` and `--text` (plain-text or JSON)

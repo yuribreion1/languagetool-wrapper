@@ -46,3 +46,6 @@ if __name__ == "__main__":
             print("Getting the languages supported")
             result = client.get("/languages")
             print(result)
+        case _:
+            print("Option not mapped, please select a valid option")
+            sys.exit(1)
