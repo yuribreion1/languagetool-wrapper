@@ -19,4 +19,5 @@ jobs:
           auto-activate-base: false
           channels: defaults,conda-forge
       - run: |
+          conda activate languagetool-wrapper
           pylint $(git ls-files '*.py')
